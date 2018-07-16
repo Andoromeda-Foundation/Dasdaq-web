@@ -1,7 +1,7 @@
 
 import React from "react";
 import { NavLink } from 'react-router-dom';
-import { Layout, Menu, Icon, Row, Col } from "antd";
+import { Affix,Layout, Menu, Icon, Row, Col } from "antd";
 import Brand from "../Brand.svg";
 const { Header } = Layout;
 const { SubMenu } = Menu
@@ -35,7 +35,10 @@ const MenuItem = ({ path, name, icon }) =>
 
 const HeaderComponent = ({ location, lang, setLanguage, theme, setTheme }) => {
     const headerBackgroundColor = theme === 'light' ? "#FFF" : "#001529"
-    return (<Header className="header" style={{ background: headerBackgroundColor }}>
+    return (
+        <Affix offsetTop={0} onChange={affixed => console.log(affixed)}>
+    <Header className="header" style={{ background: headerBackgroundColor }}>
+    
             <Row>
                 <Col xxl={4} xl={5} lg={5} sm={24} xs={24}>
                     <div className="logo" >
@@ -73,7 +76,10 @@ const HeaderComponent = ({ location, lang, setLanguage, theme, setTheme }) => {
         </Menu>
         </Col>
         </Row>
-    </Header>)
+        
+    </Header>
+    </Affix>
+    )
 }
 
 export default HeaderComponent
