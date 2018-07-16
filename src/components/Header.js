@@ -2,10 +2,10 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { Affix,Layout, Menu, Icon, Row, Col } from "antd";
-import Brand from "../Brand.svg";
+// import Brand from "../Brand.svg";
+import logo from "../dasdaq-logo.svg";
 const { Header } = Layout;
-const { SubMenu } = Menu
-
+const { SubMenu } = Menu;
 const navigationMenus = [
     {
         path: '/',
@@ -40,9 +40,9 @@ const HeaderComponent = ({ location, lang, setLanguage, theme, setTheme }) => {
     <Header className="header" style={{ background: headerBackgroundColor }}>
     
             <Row>
-                <Col xxl={4} xl={5} lg={5} sm={24} xs={24}>
+                <Col xxl={4} xl={5} lg={2} sm={24} xs={24}>
                     <div className="logo" >
-                        <img src={Brand} alt="Dasdaq Brand" 
+                        <img src={logo} alt="Dasdaq Brand" 
                         style={{maxHeight: '3rem'}}></img>
                     </div>
                 </Col>
