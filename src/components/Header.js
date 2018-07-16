@@ -52,7 +52,7 @@ const HeaderComponent = ({ location, lang, setLanguage, theme, setTheme }) => {
             mode="horizontal"
             defaultSelectedKeys={['/']}
             selectedKeys={[location.pathname]}
-            style={{ lineHeight: '64px' }}>
+            style={{ lineHeight: '62px' }}>
             {
                 navigationMenus.map(MenuItem)
             }
