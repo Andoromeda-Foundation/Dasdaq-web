@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { Affix,Layout, Menu, Icon, Row, Col } from "antd";
 // import Brand from "../Brand.svg";
-import logo from "../dasdaq-logo.svg";
+import logo from "../white.svg";
 const { Header } = Layout;
 const { SubMenu } = Menu;
 const navigationMenus = [
@@ -26,7 +26,7 @@ const navigationMenus = [
 
 const MenuItem = ({ path, name, icon }) =>
     <Menu.Item key={path}>
-        <NavLink to={path}>
+        <NavLink to={path}style={{ background: 'transparent',color: '#fff' }}>
             {icon ? <Icon type={icon} /> : <div />}
             <span>{name}</span>
         </NavLink>
@@ -34,25 +34,25 @@ const MenuItem = ({ path, name, icon }) =>
 
 
 const HeaderComponent = ({ location, lang, setLanguage, theme, setTheme }) => {
-    const headerBackgroundColor = theme === 'light' ? "#FFF" : "#001529"
+    const headerBackgroundColor = theme === 'light' ? "transparent" : "#001529"
     return (
-        <Affix offsetTop={0} onChange={affixed => console.log(affixed)}>
-    <Header className="header" style={{ background: headerBackgroundColor }}>
+        <Affix offsetTop={0} onChange={affixed => console.log(affixed)} style={{height: '0px'}}>
+    <Header className="header" style={{ background: headerBackgroundColor ,height: '0px'}}>
     
             <Row>
                 <Col xxl={4} xl={5} lg={2} sm={24} xs={24}>
                     <div className="logo" >
                         <img src={logo} alt="Dasdaq Brand" 
-                        style={{maxHeight: '3rem'}}></img>
+                        style={{maxHeight: '2.8rem'}}></img>
                     </div>
                 </Col>
-                <Col xxl={20} xl={19} lg={19} sm={24} xs={24}>
+                <Col xxl={20} xl={19} lg={19} sm={24} xs={24} style={{ background: 'transparent',color: '#fff' }}>
         <Menu
             theme={theme}
             mode="horizontal"
             defaultSelectedKeys={['/']}
             selectedKeys={[location.pathname]}
-            style={{ lineHeight: '62px' }}>
+            style={{ lineHeight: '62px' ,background: 'transparent',color: '#fff'}}>
             {
                 navigationMenus.map(MenuItem)
             }
@@ -66,7 +66,7 @@ const HeaderComponent = ({ location, lang, setLanguage, theme, setTheme }) => {
                 <Menu.Item onClick={() => setTheme('SWITCH_TO_LIGHT')}> LIGHT </Menu.Item>
             </SubMenu>
             <SubMenu 
-            style={{ float: 'right' }} 
+            style={{ float: 'right' ,color: '#fff'}} 
             title={<span><Icon type="global" /><span>语言 {lang}</span></span>}>
                 <Menu.Item onClick={() => setLanguage('SWITCH_TO_CHINESE')}>中文</Menu.Item>
                 <Menu.Item onClick={() => setLanguage('SWITCH_TO_ENGLISH')}>English</Menu.Item>
